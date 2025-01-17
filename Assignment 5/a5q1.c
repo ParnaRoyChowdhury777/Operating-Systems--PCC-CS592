@@ -1,3 +1,5 @@
+//Child Process and Parent Process
+
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/types.h>
@@ -8,8 +10,7 @@ int main()
 	pid = fork();
 	if(pid > 0) {
 		printf("PARENT: pid=%d\tppid=%d\n",getpid(),getppid());
-		sleep(5);
-		printf("PARENT DIES\n");
+		sleep(9);
 	}
 	if(pid == 0) {
 		printf("CHILD: pid=%d\tppid=%d\n",getpid(),getppid());

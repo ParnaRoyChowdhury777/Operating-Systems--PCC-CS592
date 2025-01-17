@@ -1,21 +1,21 @@
+//Orphan Process
+
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/types.h>
-#include<sys/wait.h>
 
 int main()
 {
-	int pid, status;
+	int pid;
 	pid = fork();
 	if(pid > 0) {
 		printf("PARENT: pid=%d\tppid=%d\n",getpid(),getppid());
-		sleep(9);
-		wait(&status);
+		sleep(5);
+		printf("PARENT DIES\n");
 	}
 	if(pid == 0) {
 		printf("CHILD: pid=%d\tppid=%d\n",getpid(),getppid());
-		sleep(5);
-		printf("CHILD DIED\n");
+		sleep(9);
 	}
 	return 0;
 }

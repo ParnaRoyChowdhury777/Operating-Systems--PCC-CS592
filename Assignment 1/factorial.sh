@@ -8,7 +8,7 @@ else
 	fact=1
 	for (( i=2;i<=num;i++ ))
 	do
-		fact=$(( $fact*$i ))
+		let fact=$fact*$i
 	done
 fi
 echo "The factorial is $fact"

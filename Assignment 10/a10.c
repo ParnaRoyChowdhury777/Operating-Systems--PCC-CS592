@@ -1,3 +1,5 @@
+//Producer Consumer using MultiThreading
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<semaphore.h>
@@ -89,7 +91,7 @@ int main() {
 	pthread_create(&th2, NULL, consume, NULL);
         
 	pthread_join(th1, NULL);
-	pthread_join(th1, NULL);
+	pthread_join(th2, NULL);
 
 	buff_destroy(&buff);
 	sem_destroy(&mutex);

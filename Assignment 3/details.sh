@@ -1,4 +1,5 @@
 #!/bin/bash
+
 while [ 1 ]
 	echo "Menu:"
 	echo "1. enter personal details:"

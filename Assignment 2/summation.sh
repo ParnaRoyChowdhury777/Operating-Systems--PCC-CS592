@@ -3,7 +3,7 @@
 sum=0
 for i in $*
 do
-	if [ $i -lt 1 ]; then
+	if [[ $i -lt 1 ]]; then
 		echo "Natural Numbers are only allowed"
 		exit 1
 	fi
