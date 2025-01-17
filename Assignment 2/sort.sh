@@ -1,3 +1,7 @@
+#Selection Sort
+
+#!/bin/bash
+
 read -p "Enter the length: " len
 if [ $len -lt 1 ]; then
 	echo "Length should atleast be 1"
@@ -15,17 +19,19 @@ else
 	done
 	echo ''
 
-	for (( i=0; i<len; i++ ))
-	do 
+	for (( i=0; i<len-1; i++ ))
+	do
+		min=$i 
 		for (( j=i+1; j<len; j++ ))
 		do
-			if [[ ${arr[$j]} -lt ${arr[$i]} ]]
+			if [[ ${arr[$j]} -lt ${arr[$min]} ]]
 			then
-				t=${arr[$i]}
-				arr[$i]=${arr[$j]}
-				arr[$j]=$t
+				min=$j
 			fi
 		done
+		t=${arr[$i]}
+		arr[$i]=${arr[$min]}
+		arr[$min]=$t
 	done
 
 	echo -n "Sorted array: "
